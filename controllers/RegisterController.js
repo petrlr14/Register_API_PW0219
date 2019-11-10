@@ -14,6 +14,12 @@ const insert = (req, res)=>{
      * Para ver el funcionamiento de req.body hacer:
      * console.log(req.body);
      */
+
+    if(!req.body.carnet || !req.body.schedule || !req.body.isLate){
+        return res.status(400).json({
+            message: "There are missing fields",
+        });
+    }
     
     let register = new Register(
         req.body
@@ -132,10 +138,17 @@ const getOneById = (req, res)=>{
     });  
 }
 
+const panic = (req, res)=>{
+    Register.deleteMany({}, (err)=>{
+        res.status(200).send("F en el chat");
+    });
+}
+
 module.exports = {
     insert,
     update,
     deleteById,
     getAll,
     getOneById,
+    panic,
 }

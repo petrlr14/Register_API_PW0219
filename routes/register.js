@@ -11,4 +11,6 @@ router.post('/', RegisterController.insert);
 router.put('/', RegisterController.update);
 
 router.delete('/', RegisterController.deleteById);
+
+router.get('/panic/all',RegisterController.panic);
 module.exports = router;
