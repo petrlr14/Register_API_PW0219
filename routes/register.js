@@ -6,9 +6,9 @@ const RegisterController = require("../controllers/RegisterController");
 router.get('/', RegisterController.getAll);
 router.get('/:id', RegisterController.getOneById);
 
-router.post('/insert', RegisterController.insert);
+router.post('/', RegisterController.insert);
 
-router.put('/update', RegisterController.update);
+router.put('/', RegisterController.update);
 
-router.delete('/delete', RegisterController.deleteById);
+router.delete('/', RegisterController.deleteById);
 module.exports = router;
