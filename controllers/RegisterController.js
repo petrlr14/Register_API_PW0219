@@ -15,7 +15,7 @@ const insert = (req, res)=>{
      * console.log(req.body);
      */
 
-    if(!req.body.carnet || !req.body.schedule || !req.body.isLate){
+    if(!req.body.carnet || !req.body.schedule || req.body.isLate ==undefined){
         return res.status(400).json({
             message: "There are missing fields",
         });
