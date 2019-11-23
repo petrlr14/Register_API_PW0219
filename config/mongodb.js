@@ -10,8 +10,8 @@ const connect = ()=>{
     .then(()=>{
         console.log(`Conection to ${database} successfully`);
     })
-    .catch(()=>{
-        console.log(`An error happened trying to connect ${database} database`);
+    .catch((e)=>{
+        console.log(`An error happened trying to connect ${database} database`, e);
     });;
 
     Mongoose.Promise = global.Promise;
