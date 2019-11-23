@@ -2,7 +2,7 @@ const Mongoose = require("mongoose");
 
 let database = "RegisterDB";
 let port = "27017";
-let host = "localhost";
+let host = "mongodb";
 let uri = `mongodb://${host}:${port}/${database}`
 
 const connect = ()=>{
